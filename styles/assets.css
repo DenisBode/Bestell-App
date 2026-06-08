@@ -36,6 +36,7 @@
     border-radius: 12px;
 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.2s ease;
 }
 
 .food-item-info {
@@ -48,16 +49,15 @@
 }
 
 .food-item-info p {
-    font-size: 14px;
-    color: #666666;
-
     margin-bottom: 12px;
+    color: #666;
+    line-height: 1.4;
 }
 
 .food-item-info span {
+    color: #E76C1F;
     font-size: 18px;
     font-weight: 700;
-    color: #E76C1F;
 }
 
 .food-item-image {
@@ -75,6 +75,10 @@
     border-radius: 12px;
 }
 
+.food-item:hover {
+    transform: translateY(-2px);
+}
+
 .add-button {
     width: 48px;
     height: 48px;
@@ -83,9 +87,10 @@
     border-radius: 50%;
 
     background-color: #E76C1F;
-
     color: white;
-    font-size: 24px;
 
+    font-size: 24px;
     cursor: pointer;
+
+    flex-shrink: 0;
 }
