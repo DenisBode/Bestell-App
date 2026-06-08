@@ -5,45 +5,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bestellapp</title>
-    <link rel="stylesheet" href="./styles/style.css">
+
     <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/assets.css">
 </head>
 
 <body>
 
-    <header class="main-header"></header>
+    <header class="main-header">
+
+    </header>
 
     <main>
 
         <section class="hero-section">
+
             <img src="./assets/img/header_img.jpg" alt="Burger, Pizza und Salat" class="hero-image">
 
             <div class="profile-image-container">
                 <img src="./assets/icons/hero_burger_round.png" alt="BurgerHouse Logo" class="hero-icon-image">
             </div>
+
         </section>
 
         <section class="restaurant-info">
+
             <h1>BurgerHouse</h1>
-            <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
+
+            <p>
+                The best of Burgers, Pizza, and Greens,
+                all in one great place.
+            </p>
+
         </section>
+        <section class="food-category" onclick="renderFoods('burger')">
 
-
-        <section class="food-category">
             <div class="category-icon">
                 <img src="./assets/icons/BurgerSectionIcn.png" alt="Burger Icon">
             </div>
+
             <h2>Burger & Sandwiches</h2>
+
+        </section>
+
+        <section class="food-category" onclick="renderFoods('pizza')">
+
+            <div class="category-icon">
+                <img src="./assets/icons/PizzaSectionIcn.png" alt="Pizza Icon">
+            </div>
+
+            <h2>Pizza</h2>
+
+        </section>
+
+        <section class="food-category" onclick="renderFoods('salad')">
+
+            <div class="category-icon">
+                <img src="./assets/icons/SaladSectionIcn.png" alt="Salat Icon">
+            </div>
+
+            <h2>Salate</h2>
+
         </section>
 
         <section class="menu-section">
-            <section id="menuContent"></section>
+
+            <div id="menuContent"></div>
+
         </section>
 
     </main>
 
-    <footer class="main-footer"></footer>
+    <footer class="main-footer">
+
+    </footer>
 
     <script src="./scripts/db.js"></script>
     <script src="./scripts/templates.js"></script>

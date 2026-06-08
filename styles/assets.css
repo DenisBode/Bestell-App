@@ -6,7 +6,15 @@
     background-color: #E76C1F;
 
     padding: 16px 48px;
+    cursor: pointer;
+
+    transition: 0.2s ease;
 }
+
+.food-category:hover {
+    transform: translateY(-2px);
+}
+
 
 .category-icon {
     width: 36px;
