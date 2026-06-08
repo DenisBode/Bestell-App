@@ -17,13 +17,3 @@ body {
 main {
     flex: 1;
 }
-
-.main-header {
-    height: 128px;
-    background-color: #E76C1F;
-}
-
-.main-footer {
-    height: 128px;
-    background-color: #E76C1F;
-}
