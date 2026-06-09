@@ -39,3 +39,5 @@ let foods = [
         image: "./assets/img/caesar.jpg"
     }
 ];
+
+let cart = [];

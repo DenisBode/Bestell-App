@@ -14,9 +14,9 @@ function getFoodTemplate(index) {
                 <span>${foods[index].price} €</span>
             </div>
 
-            <button class="add-button">
-                +
-            </button>
+            <button class="add-button" onclick="addToCart(${index})">
+    +
+</button>
 
         </section>
     `;
