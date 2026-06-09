@@ -8,8 +8,8 @@
 
     <link rel="stylesheet" href="./styles/standard.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/basket.css">
     <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/basket.css">
 </head>
 
 <body>
@@ -39,55 +39,57 @@
 
         </section>
 
-        <section class="menu-section">
+        <div class="content-wrapper">
 
-            <section class="food-category">
-                <div class="category-icon">
-                    <img src="./assets/icons/BurgerSectionIcn.png" alt="Burger Icon">
-                </div>
+            <section class="menu-section">
 
-                <h2>Burger & Sandwiches</h2>
+                <section class="food-category">
+                    <div class="category-icon">
+                        <img src="./assets/icons/BurgerSectionIcn.png" alt="Burger Icon">
+                    </div>
+
+                    <h2>Burger & Sandwiches</h2>
+                </section>
+
+                <div id="burgerContent"></div>
+
+                <section class="food-category">
+                    <div class="category-icon">
+                        <img src="./assets/icons/PizzaSectionIcn.png" alt="Pizza Icon">
+                    </div>
+
+                    <h2>Pizza</h2>
+                </section>
+
+                <div id="pizzaContent"></div>
+
+                <section class="food-category">
+                    <div class="category-icon">
+                        <img src="./assets/icons/SaladSectionIcn.png" alt="Salat Icon">
+                    </div>
+
+                    <h2>Salate</h2>
+                </section>
+
+                <div id="saladContent"></div>
+
             </section>
 
-            <div id="burgerContent"></div>
+            <aside class="cart-section">
 
+                <h2>Warenkorb</h2>
 
-            <section class="food-category">
-                <div class="category-icon">
-                    <img src="./assets/icons/PizzaSectionIcn.png" alt="Pizza Icon">
-                </div>
+                <div id="cartContent"></div>
 
-                <h2>Pizza</h2>
-            </section>
+            </aside>
 
-            <div id="pizzaContent"></div>
-
-
-            <section class="food-category">
-                <div class="category-icon">
-                    <img src="./assets/icons/SaladSectionIcn.png" alt="Salat Icon">
-                </div>
-
-                <h2>Salate</h2>
-            </section>
-
-            <div id="saladContent"></div>
-
-        </section>
-
-        <section class="cart-section">
-
-            <h2>Warenkorb</h2>
-
-            <div id="cartContent">
-                <p>Dein Warenkorb ist leer.</p>
-            </div>
-
-        </section>
+        </div>
 
     </main>
 
     <footer class="main-footer"></footer>
+
+    <div id="modalContainer"></div>
 
     <script src="./scripts/db.js"></script>
     <script src="./scripts/templates.js"></script>

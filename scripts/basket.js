@@ -206,12 +206,19 @@ function decreaseAmount(index) {
 
 function orderNow() {
 
-    alert("Vielen Dank für deine Bestellung!");
+    showOrderSuccess();
 
     cart = [];
 
     saveCart();
     renderCart();
+}
+
+function closeOrderSuccess() {
+
+    document
+        .getElementById("orderSuccess")
+        .classList.add("hidden");
 }
 
 function saveCart() {
@@ -235,4 +242,21 @@ function formatPrice(price) {
     return price
         .toFixed(2)
         .replace(".", ",");
+}
+
+function showOrderSuccess() {
+
+    let modalContainer =
+        document.getElementById("modalContainer");
+
+    modalContainer.innerHTML =
+        getOrderSuccessTemplate();
+}
+
+function closeOrderSuccess() {
+
+    let modalContainer =
+        document.getElementById("modalContainer");
+
+    modalContainer.innerHTML = "";
 }

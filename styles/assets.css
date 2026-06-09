@@ -1,14 +1,33 @@
 .food-category {
+    position: relative;
+
     display: flex;
     align-items: center;
     gap: 16px;
 
-    background-color: #E76C1F;
+    background-color: transparent;
 
     padding: 16px 48px;
     cursor: pointer;
 
     transition: 0.2s ease;
+
+    z-index: 1;
+}
+
+.food-category::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    left: -24px;
+    width: calc(100vw - 0px);
+
+    background-color: #E76C1F;
+
+    z-index: -1;
 }
 
 .food-category:hover {
@@ -103,6 +122,7 @@
     flex-shrink: 0;
 }
 
+/* 
 .cart-section {
     background-color: #2B2B2B;
     color: white;
@@ -152,4 +172,4 @@
     font-weight: 700;
 
     color: #E76C1F;
-}
+} */

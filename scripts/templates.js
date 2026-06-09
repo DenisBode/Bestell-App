@@ -11,7 +11,7 @@ function getFoodTemplate(index) {
 
                 <p>${foods[index].description}</p>
 
-                <span>${foods[index].price} €</span>
+                <span>${formatPrice(foods[index].price)} €</span>
             </div>
 
             <button class="add-button" onclick="addToCart(${index})">
@@ -19,5 +19,35 @@ function getFoodTemplate(index) {
 </button>
 
         </section>
+    `;
+}
+
+function getOrderSuccessTemplate() {
+    return `
+        <div class="order-success">
+
+            <div class="order-success-card">
+
+                <div class="success-icon">
+                    🍔
+                </div>
+
+                <h2>Vielen Dank!</h2>
+
+                <p>
+                    Deine Bestellung wurde erfolgreich aufgegeben.
+                </p>
+
+                <button
+                    class="success-button"
+                    onclick="closeOrderSuccess()">
+
+                    Schließen
+
+                </button>
+
+            </div>
+
+        </div>
     `;
 }
