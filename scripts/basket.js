@@ -31,144 +31,64 @@ function renderCart() {
     if (cart.length === 0) {
         cartSection.classList.remove("has-items");
         cartSection.classList.remove("mobile-open");
+        document.body.classList.remove("mobile-basket-open");
 
-        cartContent.innerHTML = "";
+        if (isMobileView()) {
+            return;
+        }
+
+        renderEmptyCart(cartContent);
         return;
     }
 
     cartSection.classList.add("has-items");
 
-    cartContent.innerHTML += `
-        <button class="close-basket-button" onclick="closeMobileBasket()">
-            ×
-        </button>
+    let totalPrice = calculateTotalPrice();
+    let deliveryPrice = getSelectedDeliveryPrice();
+
+    cartContent.innerHTML = getCartTemplate(totalPrice, deliveryPrice);
+}
+
+function isMobileView() {
+    return window.matchMedia("(max-width: 900px)").matches;
+}
+
+function renderEmptyCart(cartContent) {
+    let cartSection = document.querySelector(".cart-section");
+
+    cartSection.classList.remove("has-items");
+    cartSection.classList.remove("mobile-open");
+
+    cartContent.innerHTML = `
+        <p class="cart-empty">
+            Dein Warenkorb ist leer.
+        </p>
     `;
+}
 
-    if (cart.length === 0) {
-        cartContent.innerHTML += `
-            <p class="cart-empty">
-                Dein Warenkorb ist leer.
-            </p>
-        `;
-        return;
-    }
+function syncBasketView() {
+    renderCart();
+    updateBasketBubble();
+}
 
+function calculateTotalPrice() {
     let totalPrice = 0;
 
     for (let i = 0; i < cart.length; i++) {
-
         totalPrice += cart[i].price * cart[i].amount;
-
-        cartContent.innerHTML += `
-            <div class="cart-item">
-
-                <div class="cart-item-name">
-                    <span>${cart[i].name}</span>
-                    <small>
-                        Einzelpreis: ${formatPrice(cart[i].price)} €
-                    </small>
-                </div>
-
-                <div class="cart-controls">
-
-                    <button onclick="decreaseAmount(${i})">
-                        -
-                    </button>
-
-                    <span>${cart[i].amount}</span>
-
-                    <button onclick="increaseAmount(${i})">
-                        +
-                    </button>
-
-                </div>
-
-                <div class="cart-item-price">
-                    ${formatPrice(cart[i].price * cart[i].amount)} €
-                </div>
-
-            </div>
-        `;
     }
 
-    let deliveryPrice = isDeliverySelected
-        ? getDeliveryPrice(selectedDeliveryDistance)
-        : 0;
-
-    let finalPrice = totalPrice + deliveryPrice;
-
-    cartContent.innerHTML += `
-        <div class="delivery-section">
-
-            <label>
-                <input
-                    type="checkbox"
-                    onchange="toggleDelivery()"
-                    ${isDeliverySelected ? "checked" : ""}
-                >
-
-                Lieferung auswählen
-            </label>
-
-            ${isDeliverySelected ? `
-                <select
-                    id="deliveryDistance"
-                    onchange="changeDeliveryDistance()"
-                >
-
-                    <option
-                        value="10"
-                        ${selectedDeliveryDistance === 10 ? "selected" : ""}
-                    >
-                        Bis 10 km - 5,00 €
-                    </option>
-
-                    <option
-                        value="20"
-                        ${selectedDeliveryDistance === 20 ? "selected" : ""}
-                    >
-                        Bis 20 km - 10,00 €
-                    </option>
-
-                    <option
-                        value="21"
-                        ${selectedDeliveryDistance === 21 ? "selected" : ""}
-                    >
-                        Über 20 km - 25,00 €
-                    </option>
-
-                </select>
-            ` : ""}
-
-        </div>
-
-        <div class="cart-total">
-
-            <div>
-                Zwischensumme:
-                ${formatPrice(totalPrice)} €
-            </div>
-
-            <div>
-                Lieferung:
-                ${formatPrice(deliveryPrice)} €
-            </div>
-
-            <div>
-                Gesamt:
-                ${formatPrice(finalPrice)} €
-            </div>
-
-        </div>
-
-        <button
-            class="order-button"
-            onclick="orderNow()"
-        >
-            Jetzt bestellen
-        </button>
-    `;
+    return totalPrice;
 }
+
+function getSelectedDeliveryPrice() {
+    if (isDeliverySelected) {
+        return getDeliveryPrice(selectedDeliveryDistance);
+    }
+
+    return 0;
+}
+
 
 function toggleDelivery() {
     isDeliverySelected = !isDeliverySelected;
@@ -235,12 +155,6 @@ function orderNow() {
     updateBasketBubble();
 }
 
-function closeOrderSuccess() {
-
-    document
-        .getElementById("orderSuccess")
-        .classList.add("hidden");
-}
 
 function saveCart() {
     localStorage.setItem(
@@ -285,14 +199,14 @@ function closeOrderSuccess() {
 function updateBasketBubble() {
     const bubble = document.getElementById("basketBubble");
 
-    if (!bubble) {
-        return;
-    }
-
     let totalItems = 0;
 
     for (let i = 0; i < cart.length; i++) {
         totalItems += cart[i].amount;
+    }
+
+    if (!bubble) {
+        return;
     }
 
     bubble.textContent = totalItems;
@@ -304,16 +218,27 @@ function updateBasketBubble() {
     }
 }
 
-function openMobileBasket() {
-    const cart = document.querySelector(".cart-section");
+function toggleMobileBasket() {
+    let cartSection = document.querySelector(".cart-section");
 
-    cart.classList.add("mobile-open");
+    if (cart.length === 0) {
+        document.body.classList.remove("mobile-basket-open");
+        return;
+    }
+
+    cartSection.classList.toggle("mobile-open");
+    document.body.classList.toggle(
+        "mobile-basket-open",
+        cartSection.classList.contains("mobile-open")
+    );
 }
 
 function closeMobileBasket() {
-    const cart = document.querySelector(".cart-section");
+    let cartSection = document.querySelector(".cart-section");
 
-    cart.classList.remove("mobile-open");
+    cartSection.classList.remove("mobile-open");
+    document.body.classList.remove("mobile-basket-open");
 }
 
-
+document.addEventListener("DOMContentLoaded", syncBasketView);
+window.addEventListener("resize", syncBasketView);
