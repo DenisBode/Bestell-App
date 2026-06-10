@@ -154,10 +154,13 @@
 }
 
 .content-wrapper {
+    --content-padding: 24px;
+
     display: flex;
     align-items: flex-start;
     gap: 24px;
     padding: 24px;
+    overflow-x: clip;
 
     position: relative;
 }
@@ -230,53 +233,105 @@
 
 /* Mobile Basket Overlay */
 @media (max-width: 900px) {
+    body.mobile-basket-open {
+        overflow: hidden;
+    }
+
     .content-wrapper {
+        --content-padding: 16px;
+
         display: block;
         padding: 16px;
     }
 
     .cart-section {
         position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        left: 12px;
+        right: 12px;
+        bottom: 84px;
 
-        width: 100%;
+        width: auto;
         max-height: 80vh;
 
-        transform: translateY(100%);
-        transition: transform 0.3s ease;
+        margin: 0;
+        padding: 24px;
+
+        overflow-y: auto;
+
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transform: translateY(calc(100% + 140px));
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease,
+            visibility 0s linear 0.3s;
 
         z-index: 9998;
+        border-radius: 20px;
     }
-
-    /* .cart-section.has-items {
-        display: block;
-    } */
 
     .cart-section.mobile-open {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
         transform: translateY(0);
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
     }
 
+    .cart-section:not(.has-items) {
+        display: none;
+    }
+
+    .cart-section {
+        scrollbar-width: none;
+    }
+
+    .cart-section::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
+.close-basket-button {
+    display: none;
+}
+
+@media (max-width: 900px) {
     .close-basket-button {
-        display: block;
+        position: absolute;
+        top: 16px;
+        right: 16px;
 
-        position: sticky;
-        top: 0;
-        margin-left: auto;
-        margin-bottom: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
 
-        background-color: #2B2B2B;
-        border: none;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 50%;
 
+        background-color: rgba(255, 255, 255, 0.08);
         color: white;
-        font-size: 32px;
+
+        font-size: 24px;
         line-height: 1;
 
         cursor: pointer;
         z-index: 10000;
+        transition:
+            background-color 0.2s ease,
+            border-color 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .close-basket-button:hover {
+        background-color: rgba(231, 108, 31, 0.22);
+        border-color: rgba(231, 108, 31, 0.6);
+        transform: scale(1.05);
     }
 }

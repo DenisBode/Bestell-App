@@ -22,8 +22,8 @@
     top: 0;
     bottom: 0;
 
-    left: -24px;
-    width: calc(100vw - 0px);
+    left: calc(var(--content-padding) * -1);
+    width: 100vw;
 
     background-color: #E76C1F;
 
