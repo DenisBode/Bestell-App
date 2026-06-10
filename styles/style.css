@@ -1,6 +1,46 @@
 .main-header {
-    height: 128px;
+    height: 80px;
     background-color: #E76C1F;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1400px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 32px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+
+    color: white;
+    font-size: 36px;
+
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.menu-button:hover {
+    opacity: 0.8;
 }
 
 .main-footer {
