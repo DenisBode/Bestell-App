@@ -1,0 +1,80 @@
+/* Standardmäßig auf Desktop ausblenden */
+.mobile-nav {
+    display: none;
+}
+
+/* Mobile Ansicht */
+@media (max-width: 900px) {
+
+    .mobile-nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        height: 72px;
+
+        background: #2B2B2B;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        z-index: 9999;
+
+        border-top: 3px solid #E76C1F;
+    }
+
+    .mobile-nav-item {
+        background: none;
+        border: none;
+
+        color: white;
+        font-size: 28px;
+
+        cursor: pointer;
+    }
+
+    .mobile-nav-item.active {
+        color: #E76C1F;
+    }
+
+    body {
+        padding-bottom: 72px;
+    }
+
+    .mobile-nav-item img {
+        width: 28px;
+        height: 28px;
+
+        filter: brightness(0) invert(1);
+    }
+
+    .basket-icon-wrapper {
+        position: relative;
+    }
+
+    .basket-bubble {
+        position: absolute;
+
+        top: -8px;
+        right: -10px;
+
+        min-width: 20px;
+        height: 20px;
+
+        padding: 0 5px;
+
+        border-radius: 50%;
+
+        background-color: #E76C1F;
+        color: white;
+
+        font-size: 12px;
+        font-weight: bold;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

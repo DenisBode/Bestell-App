@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bestellapp</title>
+    <link rel="icon" type="image/png" href="./assets/icons/favicon.png">
 
     <link rel="stylesheet" href="./styles/standard.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/assets.css">
     <link rel="stylesheet" href="./styles/basket.css">
+    <link rel="stylesheet" href="./styles/mobile.css">
 </head>
 
 <body>
@@ -104,7 +106,7 @@
     <footer class="main-footer">
         <div class="footer-content">
 
-            <span>© 2025 BurgerHouse</span>
+            <span>© 2026 BurgerHouse</span>
 
             <a href="impressum.html">Impressum</a>
             <a href="datenschutz.html">Datenschutz</a>
@@ -121,6 +123,27 @@
     <script src="./scripts/foodCards.js"></script>
     <script src="./scripts/basket.js"></script>
     <script src="./scripts/script.js"></script>
+
+    <nav class="mobile-nav">
+
+        <button class="mobile-nav-item">
+            <img src="./assets/icons/home.svg" alt="Startseite">
+        </button>
+        <button class="mobile-nav-item">
+            <img src="./assets/icons/user.svg" alt="User">
+        </button>
+
+        <button class="mobile-nav-item">
+            <img src="./assets/icons/buger.svg" alt="Menu">
+        </button>
+
+        <button class="mobile-nav-item" onclick="openMobileBasket()">
+            <div class="basket-icon-wrapper">
+                <img src="./assets/icons/basket.svg" alt="Warenkorb">
+                <span id="basketBubble" class="basket-bubble">0</span>
+            </div>
+        </button>
+    </nav>
 
 </body>
 

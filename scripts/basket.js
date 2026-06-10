@@ -19,15 +19,33 @@ function addToCart(index) {
 
     saveCart();
     renderCart();
+    updateBasketBubble();
 }
 
 function renderCart() {
+    let cartSection = document.querySelector(".cart-section");
     let cartContent = document.getElementById("cartContent");
 
     cartContent.innerHTML = "";
 
     if (cart.length === 0) {
-        cartContent.innerHTML = `
+        cartSection.classList.remove("has-items");
+        cartSection.classList.remove("mobile-open");
+
+        cartContent.innerHTML = "";
+        return;
+    }
+
+    cartSection.classList.add("has-items");
+
+    cartContent.innerHTML += `
+        <button class="close-basket-button" onclick="closeMobileBasket()">
+            ×
+        </button>
+    `;
+
+    if (cart.length === 0) {
+        cartContent.innerHTML += `
             <p class="cart-empty">
                 Dein Warenkorb ist leer.
             </p>
@@ -186,6 +204,7 @@ function increaseAmount(index) {
 
     saveCart();
     renderCart();
+    updateBasketBubble();
 }
 
 function decreaseAmount(index) {
@@ -202,6 +221,7 @@ function decreaseAmount(index) {
 
     saveCart();
     renderCart();
+    updateBasketBubble();
 }
 
 function orderNow() {
@@ -212,6 +232,7 @@ function orderNow() {
 
     saveCart();
     renderCart();
+    updateBasketBubble();
 }
 
 function closeOrderSuccess() {
@@ -260,3 +281,39 @@ function closeOrderSuccess() {
 
     modalContainer.innerHTML = "";
 }
+
+function updateBasketBubble() {
+    const bubble = document.getElementById("basketBubble");
+
+    if (!bubble) {
+        return;
+    }
+
+    let totalItems = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+        totalItems += cart[i].amount;
+    }
+
+    bubble.textContent = totalItems;
+
+    if (totalItems === 0) {
+        bubble.style.display = "none";
+    } else {
+        bubble.style.display = "flex";
+    }
+}
+
+function openMobileBasket() {
+    const cart = document.querySelector(".cart-section");
+
+    cart.classList.add("mobile-open");
+}
+
+function closeMobileBasket() {
+    const cart = document.querySelector(".cart-section");
+
+    cart.classList.remove("mobile-open");
+}
+
+

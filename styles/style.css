@@ -205,3 +205,20 @@
         font-size: 1.3rem;
     }
 }
+
+@media (max-width: 600px) {
+    .hero-image {
+        height: 280px;
+    }
+
+    .profile-image-container {
+        width: 150px;
+        height: 150px;
+        border-width: 12px;
+        bottom: -70px;
+    }
+
+    .restaurant-info {
+        padding-top: 80px;
+    }
+}

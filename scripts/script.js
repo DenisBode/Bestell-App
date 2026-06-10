@@ -6,6 +6,7 @@ function init() {
     renderFoods("salad", "saladContent");
 
     renderCart();
+    updateBasketBubble();
 }
 
 init();
