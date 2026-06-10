@@ -48,10 +48,21 @@
 
             <h1>BurgerHouse</h1>
 
+            <div class="restaurant-rating">
+                <span>⭐ ⭐ ⭐ ⭐ ⭐</span>
+                <span>4,7 von 5</span>
+            </div>
+
             <p>
-                The best of Burgers, Pizza and Greens,
-                all in one great place.
+                Saftige Burger, knusprige Pizza und frische Salate –
+                alles an einem Ort.
             </p>
+
+            <div class="restaurant-details">
+                <span>🚚 Lieferung ab 5,00 €</span>
+                <span>⏱️ 30-45 min</span>
+                <span>📍 Liefergebiet bis 20 km</span>
+            </div>
 
         </section>
 
@@ -137,7 +148,7 @@
             <img src="./assets/icons/buger.svg" alt="Menu">
         </button>
 
-        <button class="mobile-nav-item" onclick="openMobileBasket()">
+        <button class="mobile-nav-item" onclick="toggleMobileBasket()">
             <div class="basket-icon-wrapper">
                 <img src="./assets/icons/basket.svg" alt="Warenkorb">
                 <span id="basketBubble" class="basket-bubble">0</span>
