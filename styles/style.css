@@ -4,8 +4,35 @@
 }
 
 .main-footer {
-    height: 128px;
     background-color: #E76C1F;
+    min-height: 96px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+
+    flex-wrap: wrap;
+
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.footer-content a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.footer-content a:hover {
+    opacity: 0.75;
 }
 
 .hero-section {
