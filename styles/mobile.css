@@ -35,10 +35,6 @@
         cursor: pointer;
     }
 
-    .mobile-nav-item.active {
-        color: #E76C1F;
-    }
-
     body {
         padding-bottom: 72px;
     }

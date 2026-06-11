@@ -240,5 +240,4 @@ function closeMobileBasket() {
     document.body.classList.remove("mobile-basket-open");
 }
 
-document.addEventListener("DOMContentLoaded", syncBasketView);
 window.addEventListener("resize", syncBasketView);
