@@ -11,6 +11,7 @@
     --color-dark-soft: #3A3A3A;
     --color-dark-deep: #1f1f1f;
     --color-white: #ffffff;
+    --color-text-on-dark: var(--color-primary-soft);
     --color-text: #2b2b2b;
     --color-text-dark: #222;
     --color-text-muted: #666;
@@ -44,7 +45,7 @@ html {
     padding: 10px 14px;
 
     background-color: var(--color-dark);
-    color: var(--color-white);
+    color: var(--color-text-on-dark);
 
     transform: translateY(-140%);
     transition: transform 0.2s ease;

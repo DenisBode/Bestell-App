@@ -57,6 +57,8 @@ function renderEmptyCart(cartContent) {
     cartSection.classList.remove("mobile-open");
 
     cartContent.innerHTML = `
+        ${getCloseBasketButtonTemplate()}
+
         <p class="cart-empty">
             Dein Warenkorb ist leer.
         </p>
@@ -87,9 +89,10 @@ function getSelectedDeliveryPrice() {
 }
 
 
-function toggleDelivery() {
-    isDeliverySelected = !isDeliverySelected;
+function toggleDelivery(isSelected) {
+    isDeliverySelected = isSelected;
 
+    saveDeliverySettings();
     renderCart();
 }
 
@@ -100,6 +103,7 @@ function changeDeliveryDistance() {
     selectedDeliveryDistance =
         Number(deliverySelect.value);
 
+    saveDeliverySettings();
     renderCart();
 }
 
@@ -167,6 +171,36 @@ function loadCart() {
 
     if (savedCart) {
         cart = JSON.parse(savedCart);
+    }
+}
+
+function saveDeliverySettings() {
+    localStorage.setItem(
+        "isDeliverySelected",
+        JSON.stringify(isDeliverySelected)
+    );
+
+    localStorage.setItem(
+        "selectedDeliveryDistance",
+        String(selectedDeliveryDistance)
+    );
+}
+
+function loadDeliverySettings() {
+    let savedDeliverySelected =
+        localStorage.getItem("isDeliverySelected");
+
+    let savedDeliveryDistance =
+        localStorage.getItem("selectedDeliveryDistance");
+
+    if (savedDeliverySelected !== null) {
+        isDeliverySelected =
+            JSON.parse(savedDeliverySelected);
+    }
+
+    if (savedDeliveryDistance !== null) {
+        selectedDeliveryDistance =
+            Number(savedDeliveryDistance);
     }
 }
 

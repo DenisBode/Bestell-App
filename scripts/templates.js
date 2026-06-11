@@ -59,13 +59,7 @@ function getOrderSuccessTemplate() {
 
 function getCartTemplate(totalPrice, deliveryPrice) {
     return `
-        <button
-            class="close-basket-button"
-            type="button"
-            aria-label="Warenkorb schliessen"
-            onclick="closeMobileBasket()">
-            &times;
-        </button>
+        ${getCloseBasketButtonTemplate()}
 
         ${getCartItemsTemplate()}
 
@@ -75,6 +69,18 @@ function getCartTemplate(totalPrice, deliveryPrice) {
 
         <button class="order-button" type="button" onclick="orderNow()">
             Jetzt bestellen
+        </button>
+    `;
+}
+
+function getCloseBasketButtonTemplate() {
+    return `
+        <button
+            class="close-basket-button"
+            type="button"
+            aria-label="Warenkorb schliessen"
+            onclick="closeMobileBasket()">
+            &times;
         </button>
     `;
 }
@@ -127,7 +133,7 @@ function getDeliveryTemplate() {
             <label>
                 <input
                     type="checkbox"
-                    onchange="toggleDelivery()"
+                    onchange="toggleDelivery(this.checked)"
                     ${isDeliverySelected ? "checked" : ""}
                 >
                 Lieferung auswählen

@@ -23,7 +23,7 @@
     align-items: center;
     gap: 12px;
 
-    color: var(--color-white);
+    color: var(--color-text-on-dark);
     font-size: 28px;
     font-weight: 700;
 }
@@ -42,7 +42,7 @@
     background: none;
     border: none;
 
-    color: var(--color-white);
+    color: var(--color-text-on-dark);
     font-size: 36px;
 
     cursor: pointer;
@@ -70,13 +70,13 @@
 
     flex-wrap: wrap;
 
-    color: var(--color-white);
+    color: var(--color-text-on-dark);
     font-size: 15px;
     font-weight: 500;
 }
 
 .footer-content a {
-    color: var(--color-white);
+    color: var(--color-text-on-dark);
     text-decoration: none;
     transition: opacity 0.2s ease;
 }
@@ -219,7 +219,7 @@
     padding: 10px 16px;
 
     background-color: var(--color-dark);
-    color: var(--color-white);
+    color: var(--color-text-on-dark);
 
     border-radius: 999px;
 

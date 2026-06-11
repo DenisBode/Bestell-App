@@ -1,5 +1,6 @@
 function init() {
     loadCart();
+    loadDeliverySettings();
 
     renderFoods("burger", "burgerContent");
     renderFoods("pizza", "pizzaContent");
