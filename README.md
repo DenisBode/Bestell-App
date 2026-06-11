@@ -1,49 +1,50 @@
-# Bestellapp
+# Bestell App
 
-Eine kleine responsive Bestell-App für ein fiktives Restaurant namens **BurgerHouse**. Die App zeigt Burger, Pizza und Salate, erlaubt das Hinzufügen von Artikeln in den Warenkorb und berechnet Zwischensumme, Lieferung und Gesamtpreis direkt im Browser.
+This project is a small static ordering app built with HTML, CSS and JavaScript.
 
-## Features
-
-- responsive Oberfläche für Desktop und Mobile
-- Kategorien für Burger, Pizza und Salate
-- Warenkorb mit Mengensteuerung
-- optionale Lieferauswahl mit Distanzpreisen
-- Speicherung von Warenkorb und Lieferauswahl im Browser
-- Bestellbestätigung als Modal
-- Impressum- und Datenschutzseiten
-
-## Technologien
+## Technologies
 
 - HTML
 - CSS
 - JavaScript
-- Local Storage für gespeicherte Warenkorb-Daten
 
-## Lokal starten
+## Local server
 
-Das Projekt benötigt keinen Build-Schritt. Es kann direkt im Browser geöffnet werden.
-
-Empfohlen ist ein kleiner lokaler Server:
+Run a local server from the project folder:
 
 ```bash
 python -m http.server 8765
 ```
 
-Danach im Browser öffnen:
+Navigate to `http://127.0.0.1:8765/`.
+
+The app can also be opened directly through `index.html`, but using a local server is recommended.
+
+## Project structure
 
 ```text
-http://127.0.0.1:8765
+assets/      Images and icons
+scripts/     JavaScript files
+styles/      CSS files
+index.html   Main page
 ```
 
-## Projektstruktur
+## Features
 
-```text
-assets/      Bilder und Icons
-scripts/     JavaScript für Daten, Templates, Warenkorb und App-Start
-styles/      CSS für Layout, Warenkorb, Mobile-Ansicht und Grundstile
-index.html   Hauptseite der App
-```
+- menu sections for burger, pizza and salad items
+- shopping basket with quantity controls
+- delivery option with distance-based prices
+- browser storage for basket and delivery settings
+- responsive layout for desktop and mobile
+
+## Build
+
+No build step is required.
+
+## Tests
+
+No automated tests are configured.
 
 ## Open Source
 
-Der Code ist als Open-Source-Projekt gedacht. Falls das Repository öffentlich geteilt wird, sollte noch eine passende `LICENSE`-Datei ergänzt werden, damit die Nutzungsrechte eindeutig geregelt sind.
+The code is intended to be open source. Add a `LICENSE` file before publishing the repository if the usage rights should be defined explicitly.
