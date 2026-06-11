@@ -24,6 +24,7 @@ The app can also be opened directly through `index.html`, but using a local serv
 
 ```text
 assets/      Images and icons
+legal/       Legal pages
 scripts/     JavaScript files
 styles/      CSS files
 index.html   Main page
