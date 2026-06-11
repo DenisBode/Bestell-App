@@ -1,6 +1,6 @@
 .main-header {
     height: 80px;
-    background-color: #E76C1F;
+    background-color: var(--color-primary);
 
     display: flex;
     align-items: center;
@@ -23,7 +23,7 @@
     align-items: center;
     gap: 12px;
 
-    color: white;
+    color: var(--color-white);
     font-size: 28px;
     font-weight: 700;
 }
@@ -42,7 +42,7 @@
     background: none;
     border: none;
 
-    color: white;
+    color: var(--color-white);
     font-size: 36px;
 
     cursor: pointer;
@@ -54,7 +54,7 @@
 }
 
 .main-footer {
-    background-color: #E76C1F;
+    background-color: var(--color-primary);
     min-height: 96px;
 
     display: flex;
@@ -70,13 +70,13 @@
 
     flex-wrap: wrap;
 
-    color: white;
+    color: var(--color-white);
     font-size: 15px;
     font-weight: 500;
 }
 
 .footer-content a {
-    color: white;
+    color: var(--color-white);
     text-decoration: none;
     transition: opacity 0.2s ease;
 }
@@ -100,8 +100,8 @@
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background-color: white;
-    border: solid 20px white;
+    background-color: var(--color-white);
+    border: solid 20px var(--color-white);
 
     position: absolute;
     left: 50%;
@@ -128,7 +128,7 @@
 
 .restaurant-info h1 {
     font-size: 32px;
-    color: #E76C1F;
+    color: var(--color-primary);
     margin-bottom: 8px;
 }
 
@@ -143,18 +143,18 @@
     max-width: 900px;
     margin: 64px auto;
     padding: 40px;
-    background: #ffffff;
+    background: var(--color-white);
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px var(--shadow-soft);
     line-height: 1.8;
-    color: #2b2b2b;
+    color: var(--color-text);
 }
 
 .legal-container h1 {
     font-size: clamp(1.55rem, 7.5vw, 3rem);
     margin-bottom: 32px;
     text-align: center;
-    color: #d32f2f;
+    color: var(--color-legal-accent);
     line-height: 1.15;
     white-space: nowrap;
 }
@@ -163,8 +163,8 @@
     font-size: 1.5rem;
     margin-top: 40px;
     margin-bottom: 16px;
-    color: #222;
-    border-left: 5px solid #ff9800;
+    color: var(--color-text-dark);
+    border-left: 5px solid var(--color-warning);
     padding-left: 12px;
 }
 
@@ -183,14 +183,14 @@
 }
 
 .legal-container a {
-    color: #d32f2f;
+    color: var(--color-legal-accent);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.2s ease;
 }
 
 .legal-container a:hover {
-    color: #ff9800;
+    color: var(--color-warning);
     text-decoration: underline;
 }
 
@@ -201,7 +201,7 @@
 
     margin-bottom: 12px;
 
-    color: #E76C1F;
+    color: var(--color-primary);
     font-size: 16px;
     font-weight: 700;
 }
@@ -218,8 +218,8 @@
 .restaurant-details span {
     padding: 10px 16px;
 
-    background-color: #2B2B2B;
-    color: white;
+    background-color: var(--color-dark);
+    color: var(--color-white);
 
     border-radius: 999px;
 

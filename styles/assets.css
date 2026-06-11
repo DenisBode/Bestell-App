@@ -24,16 +24,16 @@
 
     padding: 10px 16px;
 
-    border: 2px solid #E76C1F;
+    border: 2px solid var(--color-primary);
     border-radius: 999px;
 
-    color: #2B2B2B;
+    color: var(--color-dark);
     text-decoration: none;
     font-weight: 700;
     line-height: 1;
     scroll-snap-align: start;
 
-    background-color: white;
+    background-color: var(--color-white);
     transition:
         background-color 0.2s ease,
         color 0.2s ease,
@@ -41,8 +41,8 @@
 }
 
 .category-slider-link:hover {
-    background-color: #E76C1F;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-white);
     transform: translateY(-2px);
 }
 
@@ -80,7 +80,7 @@
     left: calc(var(--content-padding) * -1);
     width: 100vw;
 
-    background-color: #E76C1F;
+    background-color: var(--color-primary);
 
     z-index: -1;
 }
@@ -101,7 +101,7 @@
 }
 
 .food-category h2 {
-    color: white;
+    color: var(--color-white);
     font-size: 22px;
 }
 
@@ -113,10 +113,10 @@
     padding: 20px;
     margin: 16px 24px;
 
-    background-color: #FDEADC;
+    background-color: var(--color-primary-soft);
     border-radius: 12px;
 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px var(--shadow-card);
     transition: 0.2s ease;
 }
 
@@ -131,12 +131,12 @@
 
 .food-item-info p {
     margin-bottom: 12px;
-    color: #666;
+    color: var(--color-text-muted);
     line-height: 1.4;
 }
 
 .food-item-info span {
-    color: #E76C1F;
+    color: var(--color-primary);
     font-size: 18px;
     font-weight: 700;
 }
@@ -167,8 +167,8 @@
     border: none;
     border-radius: 50%;
 
-    background-color: #E76C1F;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-white);
 
     font-size: 24px;
     cursor: pointer;

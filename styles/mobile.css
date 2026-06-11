@@ -14,7 +14,7 @@
 
         height: 72px;
 
-        background: #2B2B2B;
+        background: var(--color-dark);
 
         display: flex;
         justify-content: space-around;
@@ -22,14 +22,14 @@
 
         z-index: 9999;
 
-        border-top: 3px solid #E76C1F;
+        border-top: 3px solid var(--color-primary);
     }
 
     .mobile-nav-item {
         background: none;
         border: none;
 
-        color: white;
+        color: var(--color-white);
         font-size: 28px;
 
         cursor: pointer;
@@ -63,8 +63,8 @@
 
         border-radius: 50%;
 
-        background-color: #E76C1F;
-        color: white;
+        background-color: var(--color-primary);
+        color: var(--color-white);
 
         font-size: 12px;
         font-weight: bold;
