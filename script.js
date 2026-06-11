@@ -1,4 +1,4 @@
-function init() {
+function initializeApp() {
     loadCart();
     loadDeliverySettings();
 
@@ -9,5 +9,3 @@ function init() {
     renderCart();
     updateBasketBubble();
 }
-
-init();
