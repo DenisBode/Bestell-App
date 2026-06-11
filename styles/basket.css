@@ -26,8 +26,8 @@
 
 .cart-item {
     display: grid;
-    grid-template-columns: 1fr auto auto;
-    gap: 16px;
+    grid-template-columns: minmax(0, 1fr) 112px 70px;
+    gap: 12px;
     align-items: center;
 
     padding: 16px 0;
@@ -38,6 +38,7 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+    min-width: 0;
 }
 
 .cart-item-name small {
@@ -48,6 +49,8 @@
 .cart-item-price {
     color: var(--color-primary-soft);
     font-weight: 700;
+    text-align: right;
+    white-space: nowrap;
 }
 
 .cart-empty {
@@ -57,9 +60,16 @@
 }
 
 .cart-controls {
-    display: flex;
+    display: grid;
+    grid-template-columns: 30px 4ch 30px;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    justify-content: center;
+}
+
+.cart-controls span {
+    text-align: center;
+    font-variant-numeric: tabular-nums;
 }
 
 .cart-controls button {
