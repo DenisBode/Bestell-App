@@ -1,6 +1,7 @@
 
 let isDeliverySelected = false;
 let selectedDeliveryDistance = 10;
+let addToCartToastTimeout;
 
 function addToCart(index) {
     let food = foods[index];
@@ -20,7 +21,7 @@ function addToCart(index) {
     saveCart();
     renderCart();
     updateBasketBubble();
-    openMobileBasket();
+    showAddToCartToast();
 }
 
 function renderCart() {
@@ -56,10 +57,6 @@ function renderFoods(selectedCategory, containerId) {
             menuContent.innerHTML += getFoodTemplate(i);
         }
     }
-}
-
-function isMobileView() {
-    return window.matchMedia("(max-width: 900px)").matches;
 }
 
 function renderEmptyCart(cartContent) {
@@ -261,6 +258,32 @@ function updateBasketBubble() {
     }
 }
 
+function showAddToCartToast() {
+    let toast = document.getElementById("addToCartToast");
+
+    if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "addToCartToast";
+        toast.className = "add-to-cart-toast";
+        toast.setAttribute("role", "status");
+        toast.setAttribute("aria-live", "polite");
+        toast.textContent = "Artikel erfolgreich hinzugefügt";
+
+        document.body.appendChild(toast);
+    }
+
+    clearTimeout(addToCartToastTimeout);
+    toast.classList.remove("is-visible");
+
+    requestAnimationFrame(() => {
+        toast.classList.add("is-visible");
+    });
+
+    addToCartToastTimeout = setTimeout(() => {
+        toast.classList.remove("is-visible");
+    }, 1800);
+}
+
 function toggleMobileBasket() {
     let cartSection = document.querySelector(".cart-section");
 
@@ -269,17 +292,6 @@ function toggleMobileBasket() {
         "mobile-basket-open",
         cartSection.classList.contains("mobile-open")
     );
-}
-
-function openMobileBasket() {
-    let cartSection = document.querySelector(".cart-section");
-
-    if (!isMobileView() || cart.length === 0) {
-        return;
-    }
-
-    cartSection.classList.add("mobile-open");
-    document.body.classList.add("mobile-basket-open");
 }
 
 function closeMobileBasket() {
