@@ -14,9 +14,13 @@ function getFoodTemplate(index) {
                 <span>${formatPrice(foods[index].price)} €</span>
             </div>
 
-            <button class="add-button" onclick="addToCart(${index})">
-    +
-</button>
+            <button
+                class="add-button"
+                type="button"
+                aria-label="${foods[index].name} zum Warenkorb hinzufügen"
+                onclick="addToCart(${index})">
+                +
+            </button>
 
         </section>
     `;
@@ -40,6 +44,7 @@ function getOrderSuccessTemplate() {
 
                 <button
                     class="success-button"
+                    type="button"
                     onclick="closeOrderSuccess()">
 
                     Schließen
@@ -68,7 +73,7 @@ function getCartTemplate(totalPrice, deliveryPrice) {
 
         ${getCartTotalTemplate(totalPrice, deliveryPrice)}
 
-        <button class="order-button" onclick="orderNow()">
+        <button class="order-button" type="button" onclick="orderNow()">
             Jetzt bestellen
         </button>
     `;
@@ -96,9 +101,15 @@ function getCartItemTemplate(index) {
             </div>
 
             <div class="cart-controls">
-                <button onclick="decreaseAmount(${index})">-</button>
+                <button
+                    type="button"
+                    aria-label="Menge von ${cart[index].name} verringern"
+                    onclick="decreaseAmount(${index})">-</button>
                 <span>${cart[index].amount}</span>
-                <button onclick="increaseAmount(${index})">+</button>
+                <button
+                    type="button"
+                    aria-label="Menge von ${cart[index].name} erhöhen"
+                    onclick="increaseAmount(${index})">+</button>
             </div>
 
             <div class="cart-item-price">

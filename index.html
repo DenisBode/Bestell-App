@@ -18,13 +18,15 @@
 
     <header class="main-header">
 
+        <a href="#mainContent" class="skip-link">Zum Hauptinhalt springen</a>
+
         <div class="header-content">
 
             <div class="header-logo">
                 <img src="./assets/icons/logoBestellapp.svg" alt="Bestellapp Logo">
             </div>
 
-            <button class="menu-button" aria-label="Menü öffnen">
+            <button class="menu-button" type="button" aria-label="Menü öffnen">
                 ☰
             </button>
 
@@ -32,7 +34,7 @@
 
     </header>
 
-    <main>
+    <main id="mainContent" tabindex="-1">
 
         <section class="hero-section">
 
@@ -150,18 +152,18 @@
 
     <nav class="mobile-nav">
 
-        <button class="mobile-nav-item">
+        <button class="mobile-nav-item" type="button" aria-label="Startseite">
             <img src="./assets/icons/home.svg" alt="Startseite">
         </button>
-        <button class="mobile-nav-item">
+        <button class="mobile-nav-item" type="button" aria-label="Benutzerbereich">
             <img src="./assets/icons/user.svg" alt="User">
         </button>
 
-        <button class="mobile-nav-item">
-            <img src="./assets/icons/buger.svg" alt="Menu">
+        <button class="mobile-nav-item" type="button" aria-label="Speisekarte">
+            <img src="./assets/icons/favicon.png" alt="Menu">
         </button>
 
-        <button class="mobile-nav-item" onclick="toggleMobileBasket()">
+        <button class="mobile-nav-item" type="button" aria-label="Warenkorb öffnen" onclick="toggleMobileBasket()">
             <div class="basket-icon-wrapper">
                 <img src="./assets/icons/basket.svg" alt="Warenkorb">
                 <span id="basketBubble" class="basket-bubble">0</span>

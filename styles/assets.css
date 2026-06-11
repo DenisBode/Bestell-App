@@ -60,7 +60,7 @@
     align-items: center;
     gap: 16px;
 
-    background-color: transparent;
+    background-color: var(--color-primary);
 
     padding: 16px 48px;
     cursor: pointer;

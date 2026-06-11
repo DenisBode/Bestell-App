@@ -249,10 +249,6 @@
             opacity 0.3s ease;
     }
 
-    .cart-section:not(.has-items) {
-        display: none;
-    }
-
     .cart-section {
         scrollbar-width: none;
     }

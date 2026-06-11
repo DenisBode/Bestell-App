@@ -27,7 +27,7 @@ let foods = [
     {
         category: "burger",
         name: "Double Burger",
-        description: "Doppeltes Rindfleisch, doppelt Käse und extra Burgersauce für den großen Hunger.",
+        description: "Doppeltes Rindfleisch, doppelt Käse und viel Burgersauce für den großen Hunger.",
         price: 12.90,
         image: "./assets/img/doubleburger.jpg"
     },

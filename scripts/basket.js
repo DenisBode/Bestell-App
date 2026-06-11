@@ -20,6 +20,7 @@ function addToCart(index) {
     saveCart();
     renderCart();
     updateBasketBubble();
+    openMobileBasket();
 }
 
 function renderCart() {
@@ -32,10 +33,6 @@ function renderCart() {
         cartSection.classList.remove("has-items");
         cartSection.classList.remove("mobile-open");
         document.body.classList.remove("mobile-basket-open");
-
-        if (isMobileView()) {
-            return;
-        }
 
         renderEmptyCart(cartContent);
         return;
@@ -221,16 +218,22 @@ function updateBasketBubble() {
 function toggleMobileBasket() {
     let cartSection = document.querySelector(".cart-section");
 
-    if (cart.length === 0) {
-        document.body.classList.remove("mobile-basket-open");
-        return;
-    }
-
     cartSection.classList.toggle("mobile-open");
     document.body.classList.toggle(
         "mobile-basket-open",
         cartSection.classList.contains("mobile-open")
     );
+}
+
+function openMobileBasket() {
+    let cartSection = document.querySelector(".cart-section");
+
+    if (!isMobileView() || cart.length === 0) {
+        return;
+    }
+
+    cartSection.classList.add("mobile-open");
+    document.body.classList.add("mobile-basket-open");
 }
 
 function closeMobileBasket() {

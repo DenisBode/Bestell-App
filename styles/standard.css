@@ -5,7 +5,7 @@
 }
 
 :root {
-    --color-primary: #E76C1F;
+    --color-primary: #A9470F;
     --color-primary-soft: #FDEADC;
     --color-dark: #2B2B2B;
     --color-dark-soft: #3A3A3A;
@@ -33,6 +33,42 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+.skip-link {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10001;
+
+    padding: 10px 14px;
+
+    background-color: var(--color-dark);
+    color: var(--color-white);
+
+    transform: translateY(-140%);
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+@media (forced-colors: active) {
+    :focus-visible {
+        outline: 3px solid Highlight;
+    }
+
+    .skip-link,
+    button,
+    a {
+        forced-color-adjust: auto;
+    }
 }
 
 body {
